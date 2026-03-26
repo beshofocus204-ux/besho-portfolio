@@ -100,3 +100,92 @@ body.light .side-social-bar a { color: #0a2540; }
   .side-social-bar { position: static; flex-direction: row; justify-content: center; transform: none; margin-top: 40px; }
   .section-title { font-size: 1.8rem; }
 }
+
+/* Main Glow Effect */
+.main-glow {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 600px;
+  height: 600px;
+  background: var(--glow-color);
+  filter: blur(150px);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  opacity: 0.2;
+  pointer-events: none;
+}
+
+/* Glass Box Styling */
+.glass-box {
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  border-radius: 24px;
+  backdrop-filter: blur(10px);
+  padding: 40px 20px;
+  text-align: center;
+  transition: 0.5s;
+}
+
+.glass-box:hover {
+  transform: translateY(-10px);
+  border-color: var(--turquoise);
+  box-shadow: 0 20px 60px rgba(0, 194, 203, 0.2);
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  .hero-content {
+    flex-direction: row;
+    text-align: left;
+    justify-content: space-between;
+  }
+
+  .hero-text-content {
+    text-align: left;
+  }
+
+  .hero-buttons {
+    justify-content: flex-start;
+  }
+
+  .side-social-bar {
+    left: 40px;
+  }
+}
+
+@media (max-width: 767px) {
+  header {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .nav-boxes {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .controls {
+    order: 2;
+  }
+
+  .logo {
+    order: 1;
+  }
+
+  .side-social-bar {
+    position: static;
+    flex-direction: row;
+    justify-content: center;
+    transform: translateY(0);
+    margin-top: 20px;
+    padding: 0 8%;
+  }
+
+  .hero-image-container {
+    margin-bottom: 30px;
+  }
+}
