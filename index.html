@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;900&family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body class="dark">
   <div class="main-glow"></div>
@@ -21,16 +22,11 @@
       <a href="#contact" class="nav-box" data-en="Contact" data-ar="تواصل">Contact</a>
     </nav>
     <div class="controls">
-      <!-- زرار الأدمن -->
       <a href="/admin/" class="admin-link" data-en="Admin" data-ar="الأدمن">Admin</a>
-      
-      <!-- سويتش اللغة -->
       <div class="toggle-container" id="langToggle">
         <span class="toggle-label">AR</span>
         <div class="toggle-switch"><div class="toggle-ball"></div></div>
       </div>
-      
-      <!-- سويتش الثيم -->
       <div class="toggle-container" id="themeToggle">
         <span class="toggle-label">🌙</span>
         <div class="toggle-switch"><div class="toggle-ball"></div></div>
@@ -42,12 +38,53 @@
     <!-- Hero Section -->
     <section class="hero">
       <div class="hero-content">
-        <h2 class="glow-text" data-en="Social Media Excellence" data-ar="إبداع السوشيال ميديا">Social Media Excellence</h2>
-        <p data-en="We craft high-converting visual identities for brands that want to stand out." 
-           data-ar="نصنع هويات بصرية قوية للعلامات التجارية التي تسعى للتميز.">
-           We craft high-converting visual identities for brands that want to stand out.
-        </p>
-        <a href="#projects" class="btn-main-glow" data-en="Explore Work" data-ar="استكشف أعمالنا">Explore Work</a>
+        <div class="hero-image-container">
+          <img src="https://via.placeholder.com/300" alt="Besho Focus" class="hero-image">
+          <div class="floating-icons">
+            <i class="fab fa-adobe"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-tiktok"></i>
+            <i class="fab fa-behance"></i>
+          </div>
+        </div>
+        <div class="hero-text-content">
+          <h2 class="glow-text" data-en="Besho Focus" data-ar="بيشو فوكس">Besho Focus</h2>
+          <h3 data-en="Social Media Designer" data-ar="مصمم سوشيال ميديا">Social Media Designer</h3>
+          <p data-en="We craft high-converting visual identities for brands that want to stand out." 
+             data-ar="نصنع هويات بصرية قوية للعلامات التجارية التي تسعى للتميز.">
+             We craft high-converting visual identities for brands that want to stand out.
+          </p>
+          <div class="hero-buttons">
+            <a href="#projects" class="btn-main-glow" data-en="Explore Work" data-ar="استكشف أعمالنا">Explore Work</a>
+            <a href="#contact" class="btn-secondary" data-en="Get a Quote" data-ar="اطلب عرض سعر">Get a Quote</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Side Social Bar -->
+    <div class="side-social-bar">
+      <a href="#"><i class="fab fa-whatsapp"></i></a>
+      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      <a href="#"><i class="fab fa-behance"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+    </div>
+
+    <!-- Stats Section -->
+    <section class="stats-section section-padding">
+      <div class="stats-grid">
+        <div class="stat-item">
+          <span class="stat-number">+120</span>
+          <p data-en="Projects Done" data-ar="مشاريع منجزة">Projects Done</p>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">+85</span>
+          <p data-en="Happy Clients" data-ar="عملاء سعداء">Happy Clients</p>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">+5</span>
+          <p data-en="Years of Experience" data-ar="سنوات خبرة">Years of Experience</p>
+        </div>
       </div>
     </section>
 
