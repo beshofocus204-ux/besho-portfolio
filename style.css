@@ -189,3 +189,729 @@ body.light .side-social-bar a { color: #0a2540; }
     margin-bottom: 30px;
   }
 }
+
+
+
+Upgrade
+
+Share
+Lite
+تمام، هبدأ دلوقتي في تحديث ملف style.css عشان يتناسب مع الهيكلة الجديدة ويضيف كل التنسيقات المطلوبة زي الأيقونات العائمة وشريط التواصل الجانبي، مع الحفاظ على الـ Glassmorphism والـ Glow والـ Dark/Light Mode.
+ابعت الكود وانا هنسخ
+Lite
+تمام يا فوكس، هبعتلك الكود كامل دلوقتي. بس الأول، بما إننا هنستخدم أيقونات Font Awesome، محتاجين نتأكد إنها متضمنة في ملف الـ index.html.
+لو لسه ما ضفتش السطر ده في الـ <head> بتاع index.html، فضلاً ضيفه:
+HTML
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+السطر ده بيضمن إن أيقونات Font Awesome هتشتغل معاك بشكل سليم. بعد ما تتأكد من إضافته، هبعتلك ملف الـ style.css كاملاً بالتعديلات الجديدة.
+Analyzed faress-mohamed.com for design cues like minimal layout and floating icons. Next, I updated style.css with new styles, ensuring Font Awesome icons are included in index.html.
+
+I have updated the script.js to include new interactions and scroll reveal animations for the website, supporting the redesign aligned with faress-mohamed.com's style.
+
+Lite
+تمام يا فوكس، تم تحديث ملفات موقعك بالكامل لتعكس التصميم الجديد المستوحى من موقع فارس محمد، مع الحفاظ على هويتك البصرية وتأثيرات الـ Glassmorphism والـ Glow.
+الملفات المرفقة تحتوي على:
+index.html: الهيكل الجديد للصفحة الرئيسية، بما في ذلك:
+قسم Hero مُعاد تصميمه بصورة شخصية (placeholder حالياً) وأيقونات عائمة.
+شريط تواصل اجتماعي جانبي ثابت.
+قسم إحصائيات (Stats Section) جديد.
+تحديث روابط التنقل لتشمل السكاشن الجديدة.
+style.css: التنسيقات الشاملة التي تدعم التصميم الجديد، بما في ذلك:
+تنسيقات الأيقونات العائمة وشريط التواصل الجانبي.
+تنسيقات قسم الإحصائيات.
+تعديلات على الـ Dark/Light Mode لضمان التوافق مع العناصر الجديدة.
+تحسينات عامة على الـ Glassmorphism والـ Glow.
+تنسيقات Responsive Design لضمان عرض الموقع بشكل جيد على مختلف الشاشات.
+script.js: تحديثات لـ JavaScript لتشمل:
+تفعيل أنميشن الظهور (Scroll Reveal) للعناصر والسكاشن الجديدة.
+الحفاظ على وظائف تبديل الثيم واللغة.
+ملاحظة هامة:
+تأكد من إضافة سطر Font Awesome CSS في الـ <head> بملف index.html إذا لم تكن قد أضفته بالفعل:
+HTML
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+الصورة الشخصية في قسم Hero حالياً هي placeholder (https://via.placeholder.com/300 ). ستحتاج لاستبدالها بصورتك الحقيقية.
+الآن يمكنك رفع هذه الملفات إلى استضافتك (Vercel) لمشاهدة التغييرات. لو احتجت أي تعديلات أو واجهت أي مشكلة، أنا موجود! 🚀🔥
+index.html
+Code · 6.74 KB
+style.css
+Code · 9.25 KB
+script.js
+Code · 1.38 KB
+View all files in this task
+How was this result?
+لو عاوز اضيف صورتى اعمل ايه
+Lite
+عشان تضيف صورتك الحقيقية بدل الصورة المؤقتة (Placeholder)، قدامك طريقتين سهلين:
+الطريقة الأولى: لو هترفع الصورة مع ملفات الموقع (الأفضل)
+سمّي صورتك اسم بسيط زي my-photo.jpg (أو .png).
+حط الصورة في نفس الفولدر اللي فيه ملف الـ index.html.
+افتح ملف index.html ودوّر على السطر ده (سطر رقم 47 تقريباً):
+HTML
+<img src="https://via.placeholder.com/300" alt="Besho Focus" class="hero-image">
+غير الجزء اللي بين علامات التنصيص في src لاسم صورتك، ليكون كدا:
+HTML
+<img src="my-photo.jpg" alt="Besho Focus" class="hero-image">
+الطريقة الثانية: لو عاوز تستخدم رابط مباشر (لو الصورة مرفوعة أونلاين )
+لو صورتك مرفوعة على موقع زي (Google Drive أو Imgur أو أي موقع رفع صور)، خد الرابط المباشر للصورة وحطه مكان الرابط القديم في نفس السطر:
+HTML
+<img src="رابط_صورتك_هنا" alt="Besho Focus" class="hero-image">
+نصيحة منّي:
+يفضل تكون الصورة مربعة (Square) عشان تطلع مظبوطة جوه الدائرة.
+لو الصورة خلفيتها شفافة (PNG) هتدي شكل "Luxury" أكتر مع الـ Glow اللي وراها.
+جرب ترفعها دلوقتي وطمني لو محتاج مساعدة في تظبيط مقاسها! 📸🔥
+خلى الموقع متوافق مع الهاتف والديسكتوب
+Lite
+ولا يهمك يا فوكس، أنا فعلاً كنت عامل حسابي في الكود اللي فات إنه يكون Responsive (متوافق مع الموبايل والديسكتوب)، بس عشان نضمن إن التجربة تكون مثالية 100% على كل الشاشات، عملتلك تحديث شامل لملف الـ style.css.
+التحديث ده بيظبط:
+الهيدر (Header): بيتحول لشكل مريح على الموبايل (اللوجو فوق والسويتشات تحته).
+قسم الـ Hero: الصورة والنص بيترتبوا فوق بعض في الموبايل عشان مفيش حاجة تخرج بره الشاشة.
+شريط السوشيال ميديا: بيبقى تحت خالص في الموبايل بشكل أفقي بدل ما يغطي على الكلام.
+الشبكات (Grids): الخدمات والمشاريع بتترتب تلقائياً حسب عرض الشاشة.
+انسخ الكود ده وحطه في ملف style.css بالكامل (ده النسخة النهائية والأكثر استقراراً):
+CSS
+:root {
+  --blue: #0A2540;
+  --turquoise: #00C2CB;
+  --glow-color: rgba(0, 194, 203, 0.6);
+  --bg-dark: #02080e;
+  --glass: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --text-light: #f8fafc;
+  --text-dark: #0a2540;
+}
+
+body {
+  margin: 0; font-family: 'Poppins', 'Cairo', sans-serif;
+  background: var(--bg-dark); color: var(--text-light);
+  transition: 0.5s; overflow-x: hidden; direction: ltr !important;
+}
+
+.main-glow {
+  position: fixed; top: 50%; left: 50%; width: 600px; height: 600px;
+  background: var(--glow-color); filter: blur(150px); border-radius: 50%;
+  transform: translate(-50%, -50%); z-index: -1; opacity: 0.2; pointer-events: none;
+}
+
+/* --- Header & Navigation --- */
+header {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 15px 5%; position: fixed; width: 90%; top: 0; z-index: 1000;
+  background: rgba(2, 8, 14, 0.8); backdrop-filter: blur(25px);
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.logo { font-size: 1.5rem; font-weight: 900; color: var(--turquoise); }
+.nav-boxes { display: flex; gap: 8px; }
+.nav-box {
+  text-decoration: none; color: var(--text-light); font-size: 0.65rem;
+  font-weight: 600; padding: 6px 12px; background: var(--glass);
+  border: 1px solid var(--glass-border); border-radius: 8px; transition: 0.3s;
+}
+
+.controls { display: flex; gap: 10px; align-items: center; }
+.admin-link { text-decoration: none; font-size: 0.65rem; font-weight: 800; color: var(--text-light); background: var(--glass); border: 1px solid var(--glass-border); padding: 6px 12px; border-radius: 8px; }
+
+.toggle-container { display: flex; align-items: center; gap: 5px; cursor: pointer; }
+.toggle-switch { width: 32px; height: 18px; background: var(--glass); border: 1px solid var(--glass-border); border-radius: 20px; position: relative; }
+.toggle-ball { width: 12px; height: 12px; background: var(--text-light); border-radius: 50%; position: absolute; top: 2px; left: 2px; transition: 0.3s; }
+.active .toggle-switch { background: var(--turquoise); }
+.active .toggle-ball { left: 16px; }
+
+/* --- Hero Section --- */
+.hero { min-height: 100vh; display: flex; align-items: center; padding: 120px 8% 60px; }
+.hero-content { display: flex; align-items: center; gap: 50px; width: 100%; max-width: 1200px; margin: 0 auto; }
+.hero-image-container { position: relative; width: 320px; height: 320px; flex-shrink: 0; border-radius: 50%; border: 3px solid var(--turquoise); box-shadow: 0 0 50px var(--glow-color); }
+.hero-image { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+
+.floating-icons i { position: absolute; font-size: 2rem; color: var(--turquoise); opacity: 0.6; animation: float 6s infinite ease-in-out; }
+@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
+
+.hero h2 { font-size: clamp(2.5rem, 6vw, 5rem); font-weight: 900; margin: 0; background: linear-gradient(180deg, #fff, var(--turquoise)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.hero h3 { color: var(--turquoise); font-size: 1.5rem; margin: 10px 0 20px; }
+.hero p { opacity: 0.8; line-height: 1.6; max-width: 600px; margin-bottom: 30px; }
+.hero-buttons { display: flex; gap: 15px; }
+
+/* --- Side Social Bar --- */
+.side-social-bar { position: fixed; left: 30px; top: 50%; transform: translateY(-50%); display: flex; flex-direction: column; gap: 20px; z-index: 999; }
+.side-social-bar a { color: var(--text-light); font-size: 1.4rem; transition: 0.3s; }
+.side-social-bar a:hover { color: var(--turquoise); transform: scale(1.2); }
+
+/* --- Sections & Grids --- */
+.section-padding { padding: 80px 8%; }
+.section-title { font-size: 2.2rem; text-align: center; margin-bottom: 40px; font-weight: 900; }
+.glass-box { background: var(--glass); border: 1px solid var(--glass-border); border-radius: 20px; backdrop-filter: blur(10px); padding: 30px; transition: 0.4s; }
+.services-grid, .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+.stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; text-align: center; margin-bottom: 50px; }
+.stat-number { font-size: 2.5rem; font-weight: 900; color: var(--turquoise); display: block; }
+
+/* --- Buttons --- */
+.btn-main-glow { text-decoration: none; padding: 14px 30px; border-radius: 10px; background: var(--turquoise); color: #000; font-weight: 700; box-shadow: 0 0 20px var(--turquoise); transition: 0.3s; }
+.btn-secondary { text-decoration: none; padding: 14px 30px; border-radius: 10px; border: 2px solid var(--turquoise); color: var(--turquoise); font-weight: 700; transition: 0.3s; }
+
+/* --- Light Mode --- */
+body.light { background: #f8fafc; color: #0a2540; }
+body.light header { background: rgba(248, 250, 252, 0.9); border-bottom: 1px solid #ddd; }
+body.light .nav-box, body.light .admin-link { color: #0a2540; background: #eee; }
+body.light .glass-box { background: #fff; border-color: #ddd; color: #0a2540; }
+body.light .side-social-bar a { color: #0a2540; }
+
+/* --- Responsive Design (Mobile Fixes) --- */
+@media (max-width: 992px) {
+  .hero-content { flex-direction: column; text-align: center; gap: 30px; }
+  .hero-text-content { display: flex; flex-direction: column; align-items: center; }
+  .hero-buttons { justify-content: center; }
+  .stats-grid { grid-template-columns: 1fr; gap: 30px; }
+}
+
+@media (max-width: 768px) {
+  header { flex-direction: column; gap: 15px; padding: 15px 2%; width: 96%; }
+  .nav-boxes { flex-wrap: wrap; justify-content: center; }
+  .hero { padding-top: 180px; }
+  .hero-image-container { width: 240px; height: 240px; }
+  .side-social-bar { position: static; flex-direction: row; justify-content: center; transform: none; margin-top: 40px; }
+  .section-title { font-size: 1.8rem; }
+}
+حدث الملف دلوقتي وجرب تفتح الموقع من الموبايل.. هتلاقي كل حاجة اترتبت وبقت "Responsive" ومريحة جداً في الاستخدام! طمني لو في أي جزء لسه محتاج تظبيط. 📱💻🔥
+Responsive web design preference
+
+Ensure that the website or web application is compatible with both mobile devices and desktop computers, adapting its layout and functionality to different screen sizes.
+
+Dismiss
+Accept
+Task completed
+How was this result?
+Suggested follow-ups
+
+
+
+
+style.css
+:root {
+  --blue: #0A2540;
+  --turquoise: #00C2CB;
+  --glow-color: rgba(0, 194, 203, 0.6);
+  --bg-dark: #02080e;
+  --glass: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --text-light: #f8fafc;
+  --text-dark: #0a2540;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', 'Cairo', sans-serif;
+  background: var(--bg-dark);
+  color: var(--text-light);
+  transition: 0.5s;
+  overflow-x: hidden;
+  direction: ltr !important;
+}
+
+/* Main Glow Effect */
+.main-glow {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 600px;
+  height: 600px;
+  background: var(--glow-color);
+  filter: blur(150px);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  opacity: 0.2;
+  pointer-events: none;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 5%;
+  position: fixed;
+  width: 90%;
+  top: 0;
+  z-index: 1000;
+  background: rgba(2, 8, 14, 0.8);
+  backdrop-filter: blur(25px);
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: var(--turquoise);
+}
+
+.nav-boxes {
+  display: flex;
+  gap: 10px;
+}
+
+.nav-box {
+  text-decoration: none;
+  color: var(--text-light);
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 8px 14px;
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  border-radius: 8px;
+  transition: 0.3s;
+  text-transform: uppercase;
+}
+
+.nav-box:hover {
+  background: var(--turquoise);
+  color: var(--bg-dark);
+  box-shadow: 0 0 20px var(--turquoise);
+}
+
+/* Controls & Toggles */
+.controls {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.admin-link {
+  text-decoration: none;
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: var(--text-light);
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  padding: 8px 15px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.toggle-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.toggle-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  min-width: 25px;
+}
+
+.toggle-switch {
+  width: 36px;
+  height: 20px;
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  position: relative;
+  transition: 0.3s;
+}
+
+.toggle-ball {
+  width: 14px;
+  height: 14px;
+  background: var(--text-light);
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: 0.3s;
+}
+
+/* Active States for Toggles */
+.active .toggle-switch {
+  background: var(--turquoise);
+  border-color: var(--turquoise);
+  box-shadow: 0 0 15px var(--turquoise);
+}
+
+.active .toggle-ball {
+  left: 18px;
+  background: var(--bg-dark);
+}
+
+/* Hero Section */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 100px 8% 50px;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.hero-image-container {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid var(--turquoise);
+  box-shadow: 0 0 50px var(--glow-color);
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.floating-icons {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.floating-icons i {
+  position: absolute;
+  font-size: 2.5rem;
+  color: var(--turquoise);
+  opacity: 0.7;
+  animation: float 10s ease-in-out infinite;
+}
+
+.floating-icons i:nth-child(1) { top: 10%; left: 10%; animation-delay: 0s; }
+.floating-icons i:nth-child(2) { top: 20%; right: 15%; animation-delay: 2s; }
+.floating-icons i:nth-child(3) { bottom: 15%; left: 20%; animation-delay: 4s; }
+.floating-icons i:nth-child(4) { bottom: 5%; right: 10%; animation-delay: 6s; }
+
+@keyframes float {
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(10px, 20px); }
+  100% { transform: translate(0, 0); }
+}
+
+.hero-text-content {
+  max-width: 800px;
+}
+
+.hero h2 {
+  font-size: clamp(2.5rem, 8vw, 6rem);
+  font-weight: 900;
+  line-height: 1;
+  background: linear-gradient(180deg, var(--text-light) 40%, var(--turquoise) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 30px var(--glow-color));
+  margin-bottom: 10px;
+}
+
+.hero h3 {
+  font-size: clamp(1.2rem, 3vw, 2rem);
+  font-weight: 600;
+  color: var(--turquoise);
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  opacity: 0.8;
+  margin-bottom: 30px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.btn-main-glow {
+  text-decoration: none;
+  padding: 18px 45px;
+  border-radius: 12px;
+  background: var(--turquoise);
+  color: var(--bg-dark);
+  font-weight: 800;
+  box-shadow: 0 0 30px var(--turquoise);
+  transition: 0.4s;
+  display: inline-block;
+}
+
+.btn-main-glow:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 40px var(--turquoise);
+}
+
+.btn-secondary {
+  text-decoration: none;
+  padding: 18px 45px;
+  border-radius: 12px;
+  background: transparent;
+  border: 2px solid var(--turquoise);
+  color: var(--turquoise);
+  font-weight: 800;
+  transition: 0.4s;
+  display: inline-block;
+}
+
+.btn-secondary:hover {
+  background: var(--turquoise);
+  color: var(--bg-dark);
+}
+
+/* Side Social Bar */
+.side-social-bar {
+  position: fixed;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  z-index: 999;
+}
+
+.side-social-bar a {
+  color: var(--text-light);
+  font-size: 1.5rem;
+  transition: 0.3s;
+}
+
+.side-social-bar a:hover {
+  color: var(--turquoise);
+  transform: translateX(5px);
+}
+
+/* General Section Styling */
+.section-padding {
+  padding: 100px 8%;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+  text-align: center;
+  font-weight: 900;
+  color: var(--text-light);
+}
+
+/* Stats Section */
+.stats-section {
+  background: rgba(0, 0, 0, 0.2);
+  border-top: 1px solid var(--glass-border);
+  border-bottom: 1px solid var(--glass-border);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.stat-item .stat-number {
+  font-size: 3rem;
+  font-weight: 900;
+  color: var(--turquoise);
+  display: block;
+  margin-bottom: 10px;
+}
+
+.stat-item p {
+  font-size: 1rem;
+  opacity: 0.7;
+}
+
+/* Glass Box Styling */
+.glass-box {
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  border-radius: 24px;
+  backdrop-filter: blur(10px);
+  padding: 40px 20px;
+  text-align: center;
+  transition: 0.5s;
+}
+
+.glass-box:hover {
+  transform: translateY(-10px);
+  border-color: var(--turquoise);
+  box-shadow: 0 20px 60px rgba(0, 194, 203, 0.2);
+}
+
+/* Services Section */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.service-card .icon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: var(--turquoise);
+}
+
+.service-card h4 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+/* About Section */
+.about-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 60px 40px;
+}
+
+.about-container p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  opacity: 0.8;
+}
+
+/* Contact Section */
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.contact-card {
+  padding: 40px 20px;
+}
+
+.contact-card h4 {
+  color: var(--turquoise);
+  margin-bottom: 10px;
+}
+
+/* Footer */
+footer {
+  padding: 50px;
+  text-align: center;
+  opacity: 0.5;
+  font-size: 0.9rem;
+  border-top: 1px solid var(--glass-border);
+  color: var(--text-light);
+}
+
+/* Light Mode Fix */
+body.light {
+  background: var(--text-light);
+  color: var(--text-dark);
+}
+
+body.light header {
+  background: rgba(248, 250, 252, 0.85);
+  border-bottom: 1px solid rgba(10, 37, 64, 0.1);
+}
+
+body.light .logo {
+  color: var(--text-dark);
+}
+
+body.light .nav-box,
+body.light .admin-link {
+  color: var(--text-dark);
+  background: rgba(10, 37, 64, 0.05);
+  border-color: rgba(10, 37, 64, 0.1);
+}
+
+body.light .hero h2 {
+  background: linear-gradient(180deg, var(--text-dark) 40%, var(--turquoise) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+body.light .glass-box {
+  background: white;
+  border-color: rgba(10, 37, 64, 0.1);
+  color: var(--text-dark);
+}
+
+body.light .toggle-switch {
+  border-color: rgba(10, 37, 64, 0.2);
+}
+
+body.light .toggle-ball {
+  background: var(--text-dark);
+}
+
+body.light .side-social-bar a {
+  color: var(--text-dark);
+}
+
+body.light .section-title {
+  color: var(--text-dark);
+}
+
+body.light footer {
+  color: var(--text-dark);
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  .hero-content {
+    flex-direction: row;
+    text-align: left;
+    justify-content: space-between;
+  }
+
+  .hero-text-content {
+    text-align: left;
+  }
+
+  .hero-buttons {
+    justify-content: flex-start;
+  }
+
+  .side-social-bar {
+    left: 40px;
+  }
+}
+
+@media (max-width: 767px) {
+  header {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .nav-boxes {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .controls {
+    order: 2;
+  }
+
+  .logo {
+    order: 1;
+  }
+
+  .side-social-bar {
+    position: static;
+    flex-direction: row;
+    justify-content: center;
+    transform: translateY(0);
+    margin-top: 20px;
+    padding: 0 8%;
+  }
+
+  .hero-image-container {
+    margin-bottom: 30px;
+  }
+}
+Manus
