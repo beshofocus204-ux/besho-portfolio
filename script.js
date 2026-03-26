@@ -28,10 +28,3 @@ langToggle.onclick = () => {
     el.innerText = el.getAttribute(`data-${currentLang}`);
   });
 };
-
-// كود سحب المشاريع من الـ Admin (سيتم تفعيله بمجرد إضافة مشاريع)
-async function loadProjects() {
-  const container = document.getElementById("projects");
-  // هنا سنضيف الكود الذي يقرأ ملفات الـ Markdown من GitHub لاحقاً
-}
-loadProjects();
