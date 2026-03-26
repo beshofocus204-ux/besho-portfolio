@@ -10,11 +10,15 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body class="dark">
-  <!-- تأثير الـ Glow الخلفي المتحرك -->
   <div class="bg-glow"></div>
 
   <header>
     <div class="logo">Besho Focus</div>
+    <nav class="nav-links">
+      <a href="#services" data-en="Services" data-ar="خدماتنا">Services</a>
+      <a href="#projects" data-en="Work" data-ar="أعمالنا">Work</a>
+      <a href="#about" data-en="About" data-ar="عنّا">About</a>
+    </nav>
     <div class="controls">
       <a href="/admin/" class="admin-link" data-en="Admin" data-ar="لوحة التحكم">Admin</a>
       <div class="toggle-container" id="langToggle">
@@ -29,10 +33,11 @@
   </header>
 
   <main>
+    <!-- 1. Hero Section -->
     <section class="hero">
       <div class="hero-content">
-        <h2 class="reveal-text" data-en="Social Media Excellence" data-ar="إبداع السوشيال ميديا">Social Media Excellence</h2>
-        <p class="reveal-text-slow" data-en="We craft high-converting visual identities for brands that want to stand out." 
+        <h2 data-en="Social Media Excellence" data-ar="إبداع السوشيال ميديا">Social Media Excellence</h2>
+        <p data-en="We craft high-converting visual identities for brands that want to stand out." 
            data-ar="نصنع هويات بصرية قوية للعلامات التجارية التي تسعى للتميز.">
            We craft high-converting visual identities for brands that want to stand out.
         </p>
@@ -42,13 +47,50 @@
       </div>
     </section>
 
+    <!-- 2. Services Section -->
+    <section id="services" class="section-padding">
+      <h3 class="section-title glow-text" data-en="Our Services" data-ar="خدماتنا">Our Services</h3>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="icon">🎨</div>
+          <h4 data-en="Social Media Design" data-ar="تصميم السوشيال ميديا">Social Media Design</h4>
+          <p data-en="Engaging posts that stop the scroll." data-ar="بوستات جذابة تجعل العميل يتوقف عن التمرير."></p>
+        </div>
+        <div class="service-card">
+          <div class="icon">💎</div>
+          <h4 data-en="Brand Identity" data-ar="الهوية البصرية">Brand Identity</h4>
+          <p data-en="Unique visual language for your brand." data-ar="لغة بصرية فريدة لعلامتك التجارية."></p>
+        </div>
+        <div class="service-card">
+          <div class="icon">🚀</div>
+          <h4 data-en="Ad Creatives" data-ar="تصاميم الإعلانات">Ad Creatives</h4>
+          <p data-en="High-converting designs for paid ads." data-ar="تصاميم احترافية تزيد من مبيعات إعلاناتك."></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Portfolio Section -->
     <section id="projects" class="section-padding">
       <h3 class="section-title glow-text" data-en="Featured Work" data-ar="أبرز أعمالنا">Featured Work</h3>
       <div id="projects-container" class="projects-grid">
-        <!-- المشاريع ستظهر هنا بتأثيرات Hover قوية -->
+        <!-- Projects will load here -->
+      </div>
+    </section>
+
+    <!-- 4. About Section -->
+    <section id="about" class="section-padding about-section">
+      <div class="about-content">
+        <h3 class="section-title glow-text" data-en="About Besho Focus" data-ar="عن بيشو فوكس">About Besho Focus</h3>
+        <p data-en="With over 5 years of experience in social media design, we help brands tell their stories through powerful visuals." 
+           data-ar="بخبرة تزيد عن 5 سنوات في تصميم السوشيال ميديا، نساعد العلامات التجارية على سرد قصصها من خلال تصاميم بصرية قوية.">
+        </p>
       </div>
     </section>
   </main>
+
+  <footer>
+    <p>&copy; 2026 Besho Focus. All rights reserved.</p>
+  </footer>
 
   <script src="script.js"></script>
 </body>
