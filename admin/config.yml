@@ -1,16 +1,17 @@
 backend:
   name: git-gateway
-  branch: main  # اسم الفرع بتاعك على GitHub
+  branch: main # تأكد إنه نفس اسم البرانش بتاعك
 
-media_folder: "images/uploads" # المكان اللي الصور هتتحفظ فيه
-public_folder: "/images/uploads"
+media_folder: "projects/images" # المكان اللي الصور هتتحفظ فيه
+public_folder: "/projects/images"
 
 collections:
   - name: "projects"
     label: "Projects"
-    folder: "data/projects"
+    folder: "projects/data" # المكان اللي بيانات المشاريع هتتحفظ فيه
     create: true
+    slug: "{{slug}}"
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Image", name: "image", widget: "image" }
       - { label: "Description", name: "description", widget: "text" }
+      - { label: "Project Image", name: "image", widget: "image" }
