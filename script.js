@@ -14,13 +14,11 @@ langToggle.onclick = () => {
   currentLang = currentLang === "en" ? "ar" : "en";
   langToggle.classList.toggle("active", currentLang === "ar");
   langToggle.querySelector(".toggle-label").innerText = currentLang === "en" ? "AR" : "EN";
-  
   document.querySelectorAll("[data-en]").forEach(el => {
     el.innerText = el.getAttribute(`data-${currentLang}`);
   });
 };
 
-// أنميشن التمرير البسيط
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
