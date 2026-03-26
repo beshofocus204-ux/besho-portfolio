@@ -1,71 +1,75 @@
 :root {
   --blue: #0A2540;
   --turquoise: #00C2CB;
-  --glow-color: rgba(0, 194, 203, 0.4);
+  --glow-color: rgba(0, 194, 203, 0.6);
   --bg-dark: #02080e;
-  --glass: rgba(255, 255, 255, 0.03);
-}
-
-/* أنميشن الظهور عند التمرير */
-.reveal {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.8s cubic-bezier(0.2, 0, 0.2, 1);
-}
-.reveal.active {
-  opacity: 1;
-  transform: translateY(0);
+  --glass: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
 }
 
 body {
   margin: 0; font-family: 'Poppins', 'Cairo', sans-serif;
   background: var(--bg-dark); color: white; transition: 0.5s; overflow-x: hidden;
+  /* ثبات الاتجاه لليسار دائماً كما طلبت */
+  direction: ltr !important; 
 }
 
-/* Glow Background */
-.bg-glow {
-  position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-  background: radial-gradient(circle at 50% 50%, rgba(0, 194, 203, 0.08) 0%, transparent 60%);
-  pointer-events: none; z-index: -1;
+/* الـ Glow الخلفي القوي */
+.main-glow {
+  position: fixed; top: 50%; left: 50%; width: 600px; height: 600px;
+  background: var(--glow-color); filter: blur(150px); border-radius: 50%;
+  transform: translate(-50%, -50%); z-index: -1; opacity: 0.2; pointer-events: none;
 }
 
 header {
   display: flex; justify-content: space-between; align-items: center;
   padding: 20px 5%; position: fixed; width: 90%; top: 0; z-index: 1000;
-  background: rgba(2, 8, 14, 0.8); backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(0, 194, 203, 0.1);
+  background: rgba(2, 8, 14, 0.8); backdrop-filter: blur(25px);
+  border-bottom: 1px solid var(--glass-border);
 }
 
-.nav-links a { text-decoration: none; color: white; font-size: 0.85rem; opacity: 0.6; transition: 0.3s; }
-.nav-links a:hover { opacity: 1; color: var(--turquoise); }
+/* البوكسات اللي فوق (Nav Boxes) */
+.nav-boxes { display: flex; gap: 10px; }
+.nav-box {
+  text-decoration: none; color: white; font-size: 0.75rem; font-weight: 600;
+  padding: 8px 16px; background: var(--glass); border: 1px solid var(--glass-border);
+  border-radius: 8px; transition: 0.3s; text-transform: uppercase;
+}
+.nav-box:hover { background: var(--turquoise); color: var(--bg-dark); box-shadow: 0 0 20px var(--turquoise); }
 
-.hero { height: 100vh; display: flex; justify-content: center; align-items: center; text-align: center; }
-.hero h2 { font-size: clamp(3rem, 10vw, 6.5rem); font-weight: 900; margin: 0; background: linear-gradient(180deg, #fff 40%, var(--turquoise) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(0 0 30px var(--glow-color)); }
+/* Hero Section */
+.hero h2 {
+  font-size: clamp(3rem, 10vw, 6.5rem); font-weight: 900; line-height: 0.95;
+  background: linear-gradient(180deg, #fff 40%, var(--turquoise) 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 40px var(--glow-color));
+}
 
-.section-padding { padding: 120px 8%; }
-.section-title { font-size: clamp(2rem, 5vw, 3.5rem); margin-bottom: 60px; text-align: center; font-weight: 900; }
+/* البوكسات الزجاجية (Glass Boxes) */
+.glass-box {
+  background: var(--glass); border: 1px solid var(--glass-border);
+  border-radius: 24px; backdrop-filter: blur(10px); transition: 0.5s;
+}
+.glass-box:hover {
+  transform: translateY(-10px); border-color: var(--turquoise);
+  box-shadow: 0 20px 60px rgba(0, 194, 203, 0.2);
+  background: rgba(0, 194, 203, 0.05);
+}
 
-.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
-.service-card { background: var(--glass); padding: 50px 30px; border-radius: 25px; border: 1px solid rgba(255,255,255,0.05); transition: 0.5s; text-align: center; }
+.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+.service-card { padding: 50px 30px; text-align: center; }
+.service-card .icon { font-size: 3.5rem; margin-bottom: 20px; filter: drop-shadow(0 0 15px var(--turquoise)); }
 
-.projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; }
-.project-card { position: relative; border-radius: 20px; overflow: hidden; height: 450px; border: 1px solid rgba(255,255,255,0.05); transition: 0.6s; }
-.project-card img { width: 100%; height: 100%; object-fit: cover; }
+/* زرار الـ Glow الرئيسي */
+.btn-main-glow {
+  text-decoration: none; color: white; padding: 20px 50px; border-radius: 12px;
+  background: var(--turquoise); color: var(--bg-dark); font-weight: 800;
+  box-shadow: 0 0 40px var(--turquoise); transition: 0.4s; display: inline-block;
+}
+.btn-main-glow:hover { transform: scale(1.05); box-shadow: 0 0 60px var(--turquoise); }
 
-/* --- إصلاح الـ Light Mode الشامل --- */
+/* Light Mode المصلح */
 body.light { background: #f0f4f8; color: #0a2540; }
-body.light .bg-glow { background: radial-gradient(circle at 50% 50%, rgba(0, 194, 203, 0.05) 0%, transparent 60%); }
-body.light header { background: rgba(240, 244, 248, 0.8); border-bottom: 1px solid rgba(10, 37, 64, 0.1); }
-body.light .nav-links a { color: #0a2540; }
-body.light .hero h2 { background: linear-gradient(180deg, #0a2540 40%, var(--turquoise) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-body.light .hero p { color: #0a2540; opacity: 0.7; }
-body.light .section-title { color: #0a2540; }
-body.light .service-card { background: white; border-color: rgba(10, 37, 64, 0.1); color: #0a2540; }
-body.light .service-card p { color: #0a2540; opacity: 0.7; }
-body.light .admin-link { background: rgba(10, 37, 64, 0.05); border-color: rgba(10, 37, 64, 0.1); color: #0a2540; }
-body.light .toggle-switch { border-color: rgba(10, 37, 64, 0.2); }
-body.light .toggle-ball { background: #0a2540; }
-body.light footer { color: #0a2540; opacity: 0.6; }
-
-/* RTL Support */
-body.rtl { direction: rtl; font-family: 'Cairo', sans-serif; }
+body.light .main-glow { background: rgba(0, 194, 203, 0.1); }
+body.light .glass-box { background: white; border-color: rgba(10, 37, 64, 0.1); }
+body.light .nav-box { color: #0a2540; border-color: rgba(10, 37, 64, 0.1); }
