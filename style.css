@@ -89,3 +89,28 @@ body.light .hero h2 { background: linear-gradient(180deg, #0A2540 30%, var(--tur
 body.light .hero p { color: #0A2540; opacity: 0.8; }
 body.light .toggle-switch { border-color: rgba(10, 37, 64, 0.2); }
 body.light .toggle-ball { background: #0A2540; }
+
+/* تنسيق زرار الأدمن */
+.admin-link {
+  text-decoration: none;
+  font-size: 1.1rem;
+  background: var(--glass);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 5px 10px;
+  border-radius: 4px;
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.admin-link:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
+}
+
+/* تعديل بسيط للايت مود */
+body.light .admin-link {
+  background: rgba(10, 37, 64, 0.05);
+  border-color: rgba(10, 37, 64, 0.1);
+}
