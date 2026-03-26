@@ -10,9 +10,10 @@
 body {
   margin: 0; font-family: 'Poppins', 'Cairo', sans-serif;
   background: var(--bg-dark); color: white; transition: 0.5s; overflow-x: hidden;
-  direction: ltr !important; /* ثبات الاتجاه لليسار */
+  direction: ltr !important;
 }
 
+/* Glow Background */
 .main-glow {
   position: fixed; top: 50%; left: 50%; width: 600px; height: 600px;
   background: var(--glow-color); filter: blur(150px); border-radius: 50%;
@@ -53,7 +54,6 @@ header {
   padding: 40px 20px; text-align: center;
 }
 .glass-box:hover { transform: translateY(-10px); border-color: var(--turquoise); box-shadow: 0 20px 60px rgba(0, 194, 203, 0.2); }
-.icon { font-size: 3rem; margin-bottom: 15px; filter: drop-shadow(0 0 10px var(--turquoise)); }
 
 .btn-main-glow {
   text-decoration: none; padding: 18px 45px; border-radius: 12px;
@@ -61,21 +61,17 @@ header {
   box-shadow: 0 0 30px var(--turquoise); transition: 0.4s; display: inline-block;
 }
 
-.controls { display: flex; gap: 15px; align-items: center; }
-.admin-link { text-decoration: none; font-size: 0.65rem; font-weight: 800; background: var(--glass); border: 1px solid var(--glass-border); padding: 6px 10px; border-radius: 4px; color: white; }
-.toggle-container { display: flex; align-items: center; gap: 6px; cursor: pointer; }
-.toggle-switch { width: 32px; height: 16px; background: var(--glass); border: 1px solid var(--glass-border); border-radius: 20px; position: relative; }
-.toggle-ball { width: 10px; height: 10px; background: white; border-radius: 50%; position: absolute; top: 2px; left: 2px; transition: 0.3s; }
-.active .toggle-ball { left: 18px; background: var(--bg-dark); }
-.active .toggle-switch { background: var(--turquoise); box-shadow: 0 0 15px var(--turquoise); }
-
-@media (max-width: 768px) {
-  header { flex-direction: column; gap: 15px; padding: 15px; width: 92%; position: relative; }
-  .nav-boxes { width: 100%; justify-content: center; }
-  .hero { height: auto; padding: 100px 20px; }
-}
-
-/* Light Mode */
-body.light { background: #f0f4f8; color: #0a2540; }
-body.light .glass-box { background: white; border-color: rgba(10, 37, 64, 0.1); }
-body.light .nav-box { color: #0a2540; }
+/* --- ضبط الـ Light Mode الاحترافي --- */
+body.light { background: #f8fafc; color: #0a2540; }
+body.light .main-glow { background: rgba(0, 194, 203, 0.1); opacity: 0.5; }
+body.light header { background: rgba(248, 250, 252, 0.85); border-bottom: 1px solid rgba(10, 37, 64, 0.1); }
+body.light .nav-box { color: #0a2540; background: rgba(10, 37, 64, 0.05); border-color: rgba(10, 37, 64, 0.1); }
+body.light .nav-box:hover { background: var(--turquoise); color: white; }
+body.light .hero h2 { background: linear-gradient(180deg, #0a2540 40%, var(--turquoise) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+body.light .hero p { color: #0a2540; opacity: 0.8; }
+body.light .section-title { color: #0a2540; }
+body.light .glass-box { background: white; border-color: rgba(10, 37, 64, 0.1); box-shadow: 0 10px 30px rgba(10, 37, 64, 0.05); color: #0a2540; }
+body.light .glass-box:hover { box-shadow: 0 20px 50px rgba(0, 194, 203, 0.2); }
+body.light .admin-link { color: #0a2540; border-color: rgba(10, 37, 64, 0.1); }
+body.light .toggle-switch { border-color: rgba(10, 37, 64, 0.2); }
+body.light .toggle-ball { background: #0a2540; }
