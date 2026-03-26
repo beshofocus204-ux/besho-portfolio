@@ -1,5 +1,19 @@
 backend:
   name: github
-  repo: beshofocus204-ux/besho-portfolio # استبدل ببياناتك
+  repo: beshofocus204-ux/besho-portfolio
   branch: main
-  base_url: https://cms-proxy.vercel.app # بوابة دخول جاهزة ومجانية
+  base_url: https://cms-proxy.vercel.app
+
+media_folder: "projects/images"
+public_folder: "/projects/images"
+
+collections:
+  - name: "projects"
+    label: "Projects"
+    folder: "projects/data"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Project Image", name: "image", widget: "image" }
