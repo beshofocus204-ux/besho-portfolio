@@ -1,6 +1,6 @@
 backend:
-  name: github
-  repo: beshofocus204-ux/besho-portfolio # استبدل ببياناتك
+  name: beshofocus204
+  repo: besho-portfolio # استبدل ببياناتك
   branch: main
 
 media_folder: "projects/images"
