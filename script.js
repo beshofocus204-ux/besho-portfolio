@@ -8,16 +8,15 @@ themeToggle.onclick = () => {
   isDark = !isDark;
   document.body.classList.toggle("light", !isDark);
   document.body.classList.toggle("dark", isDark);
-  themeToggle.classList.toggle("active", !isDark); // تحريك السويتش
+  themeToggle.classList.toggle("active", !isDark);
   themeToggle.querySelector(".toggle-label").innerText = isDark ? "🌙" : "☀️";
 };
 
 // سويتش اللغة
 langToggle.onclick = () => {
   currentLang = currentLang === "en" ? "ar" : "en";
-  langToggle.classList.toggle("active", currentLang === "ar"); // تحريك السويتش
+  langToggle.classList.toggle("active", currentLang === "ar");
   langToggle.querySelector(".toggle-label").innerText = currentLang === "en" ? "AR" : "EN";
-
   document.body.classList.toggle("rtl", currentLang === "ar");
 
   const translatableElements = document.querySelectorAll("[data-en]");
@@ -29,3 +28,10 @@ langToggle.onclick = () => {
     el.innerText = el.getAttribute(`data-${currentLang}`);
   });
 };
+
+// كود سحب المشاريع من الـ Admin (سيتم تفعيله بمجرد إضافة مشاريع)
+async function loadProjects() {
+  const container = document.getElementById("projects");
+  // هنا سنضيف الكود الذي يقرأ ملفات الـ Markdown من GitHub لاحقاً
+}
+loadProjects();
