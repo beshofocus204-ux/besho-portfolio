@@ -1,3 +1,20 @@
+// 1. أنميشن التمرير (Scroll Reveal)
+const observerOptions = { threshold: 0.15 };
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('active');
+    }
+  });
+}, observerOptions);
+
+// إضافة كلاس reveal لكل السكاشن والكروت
+document.querySelectorAll('section, .service-card, .project-card').forEach(el => {
+  el.classList.add('reveal');
+  observer.observe(el);
+});
+
+// 2. سويتش الثيم واللغة
 const themeToggle = document.getElementById("themeToggle");
 const langToggle = document.getElementById("langToggle");
 let isDark = true;
@@ -20,7 +37,7 @@ langToggle.onclick = () => {
   });
 };
 
-// سحب المشاريع من GitHub (تأكد من تغيير البيانات)
+// 3. سحب المشاريع (تأكد من تغيير البيانات)
 async function loadProjects() {
   const container = document.getElementById("projects-container");
   try {
@@ -35,9 +52,10 @@ async function loadProjects() {
         const title = content.match(/title:\s*"(.*)"/)?.[1] || content.match(/title:\s*(.*)/)?.[1];
         const image = content.match(/image:\s*"(.*)"/)?.[1] || content.match(/image:\s*(.*)/)?.[1];
         const card = document.createElement('div');
-        card.className = 'project-card';
+        card.className = 'project-card reveal';
         card.innerHTML = `<img src="${image}"><div class="project-info"><h3>${title}</h3></div>`;
         container.appendChild(card);
+        observer.observe(card); // تفعيل الأنميشن للمشاريع الجديدة
       }
     }
   } catch (e) { console.log("Add projects in Admin!"); }
