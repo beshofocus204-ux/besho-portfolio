@@ -13,7 +13,6 @@ body {
   direction: ltr !important;
 }
 
-/* Glow Background */
 .main-glow {
   position: fixed; top: 50%; left: 50%; width: 600px; height: 600px;
   background: var(--glow-color); filter: blur(150px); border-radius: 50%;
@@ -35,63 +34,36 @@ header {
 }
 .nav-box:hover { background: var(--turquoise); color: var(--bg-dark); box-shadow: 0 0 20px var(--turquoise); }
 
-.hero { height: 100vh; display: flex; justify-content: center; align-items: center; text-align: center; padding-top: 80px; }
-.hero h2 {
-  font-size: clamp(2.5rem, 8vw, 6rem); font-weight: 900; line-height: 1;
-  background: linear-gradient(180deg, #fff 40%, var(--turquoise) 100%);
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 0 30px var(--glow-color));
-}
-.hero p { font-size: 1.1rem; opacity: 0.6; margin: 20px 0 40px; max-width: 600px; }
+.controls { display: flex; gap: 15px; align-items: center; }
+.admin-link { text-decoration: none; font-size: 0.7rem; font-weight: 800; color: white; background: var(--glass); border: 1px solid var(--glass-border); padding: 8px 15px; border-radius: 8px; transition: 0.3s; }
+
+.toggle-container { display: flex; align-items: center; gap: 8px; cursor: pointer; }
+.toggle-switch { width: 36px; height: 20px; background: var(--glass); border: 1px solid var(--glass-border); border-radius: 20px; position: relative; transition: 0.3s; }
+.toggle-ball { width: 14px; height: 14px; background: white; border-radius: 50%; position: absolute; top: 2px; left: 2px; transition: 0.3s; }
+.active .toggle-switch { background: var(--turquoise); border-color: var(--turquoise); box-shadow: 0 0 15px var(--turquoise); }
+.active .toggle-ball { left: 18px; background: var(--bg-dark); }
+
+.hero { height: 100vh; display: flex; justify-content: center; align-items: center; text-align: center; }
+.hero h2 { font-size: clamp(2.5rem, 8vw, 6rem); font-weight: 900; line-height: 1; background: linear-gradient(180deg, #fff 40%, var(--turquoise) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(0 0 30px var(--glow-color)); }
 
 .section-padding { padding: 100px 8%; }
 .section-title { font-size: 2.5rem; margin-bottom: 50px; text-align: center; font-weight: 900; }
 
-.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
-.glass-box {
-  background: var(--glass); border: 1px solid var(--glass-border);
-  border-radius: 24px; backdrop-filter: blur(10px); transition: 0.5s;
-  padding: 40px 20px; text-align: center;
-}
+.glass-box { background: var(--glass); border: 1px solid var(--glass-border); border-radius: 24px; backdrop-filter: blur(10px); padding: 40px 20px; text-align: center; transition: 0.5s; }
 .glass-box:hover { transform: translateY(-10px); border-color: var(--turquoise); box-shadow: 0 20px 60px rgba(0, 194, 203, 0.2); }
 
-.btn-main-glow {
-  text-decoration: none; padding: 18px 45px; border-radius: 12px;
-  background: var(--turquoise); color: var(--bg-dark); font-weight: 800;
-  box-shadow: 0 0 30px var(--turquoise); transition: 0.4s; display: inline-block;
-}
-/* --- Controls & Toggles --- */
-.controls { display: flex; gap: 15px; align-items: center; }
+.services-grid, .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+.about-container { max-width: 800px; margin: 0 auto; padding: 60px 40px; }
+.about-container p { font-size: 1.1rem; line-height: 1.8; opacity: 0.8; }
 
-.admin-link {
-  text-decoration: none; font-size: 0.7rem; font-weight: 800; color: white;
-  background: var(--glass); border: 1px solid var(--glass-border);
-  padding: 8px 15px; border-radius: 8px; transition: 0.3s;
-}
+.contact-card { padding: 40px 20px; }
+.contact-card h4 { color: var(--turquoise); margin-bottom: 10px; }
 
-.toggle-container { display: flex; align-items: center; gap: 8px; cursor: pointer; }
-.toggle-label { font-size: 0.8rem; font-weight: 600; min-width: 25px; }
-.toggle-switch {
-  width: 36px; height: 20px; background: var(--glass);
-  border: 1px solid var(--glass-border); border-radius: 20px;
-  position: relative; transition: 0.3s;
-}
-.toggle-ball {
-  width: 14px; height: 14px; background: white; border-radius: 50%;
-  position: absolute; top: 2px; left: 2px; transition: 0.3s;
-}
+.btn-main-glow { text-decoration: none; padding: 18px 45px; border-radius: 12px; background: var(--turquoise); color: var(--bg-dark); font-weight: 800; box-shadow: 0 0 30px var(--turquoise); transition: 0.4s; display: inline-block; }
 
-/* Active States */
-.active .toggle-switch { background: var(--turquoise); border-color: var(--turquoise); box-shadow: 0 0 15px var(--turquoise); }
-.active .toggle-ball { left: 18px; background: var(--bg-dark); }
+footer { padding: 50px; text-align: center; opacity: 0.5; font-size: 0.9rem; border-top: 1px solid var(--glass-border); }
 
-/* Hero & Sections */
-.hero { height: 100vh; display: flex; justify-content: center; align-items: center; text-align: center; }
-.hero h2 { font-size: clamp(2.5rem, 8vw, 6rem); font-weight: 900; line-height: 1; background: linear-gradient(180deg, #fff 40%, var(--turquoise) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(0 0 30px var(--glow-color)); }
-.section-padding { padding: 100px 8%; }
-.glass-box { background: var(--glass); border: 1px solid var(--glass-border); border-radius: 24px; backdrop-filter: blur(10px); padding: 40px 20px; text-align: center; transition: 0.5s; }
-
-/* --- Light Mode Fix --- */
+/* Light Mode Fix */
 body.light { background: #f8fafc; color: #0a2540; }
 body.light header { background: rgba(248, 250, 252, 0.85); border-bottom: 1px solid rgba(10, 37, 64, 0.1); }
 body.light .nav-box, body.light .admin-link { color: #0a2540; background: rgba(10, 37, 64, 0.05); border-color: rgba(10, 37, 64, 0.1); }
@@ -99,32 +71,3 @@ body.light .hero h2 { background: linear-gradient(180deg, #0a2540 40%, var(--tur
 body.light .glass-box { background: white; border-color: rgba(10, 37, 64, 0.1); color: #0a2540; }
 body.light .toggle-switch { border-color: rgba(10, 37, 64, 0.2); }
 body.light .toggle-ball { background: #0a2540; }
-/* --- ضبط الـ Light Mode الاحترافي --- */
-body.light { background: #f8fafc; color: #0a2540; }
-body.light .main-glow { background: rgba(0, 194, 203, 0.1); opacity: 0.5; }
-body.light header { background: rgba(248, 250, 252, 0.85); border-bottom: 1px solid rgba(10, 37, 64, 0.1); }
-body.light .nav-box { color: #0a2540; background: rgba(10, 37, 64, 0.05); border-color: rgba(10, 37, 64, 0.1); }
-body.light .nav-box:hover { background: var(--turquoise); color: white; }
-body.light .hero h2 { background: linear-gradient(180deg, #0a2540 40%, var(--turquoise) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-body.light .hero p { color: #0a2540; opacity: 0.8; }
-body.light .section-title { color: #0a2540; }
-body.light .glass-box { background: white; border-color: rgba(10, 37, 64, 0.1); box-shadow: 0 10px 30px rgba(10, 37, 64, 0.05); color: #0a2540; }
-body.light .glass-box:hover { box-shadow: 0 20px 50px rgba(0, 194, 203, 0.2); }
-body.light .admin-link { color: #0a2540; border-color: rgba(10, 37, 64, 0.1); }
-body.light .toggle-switch { border-color: rgba(10, 37, 64, 0.2); }
-body.light .toggle-ball { background: #0a2540; }
-
-/* تنسيقات السكاشن الجديدة */
-.about-container { max-width: 800px; margin: 0 auto; padding: 60px 40px; }
-.about-container p { font-size: 1.1rem; line-height: 1.8; opacity: 0.8; }
-
-.contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
-.contact-card { padding: 40px 20px; }
-.contact-card h4 { color: var(--turquoise); margin-bottom: 10px; }
-
-/* تأكد من وجود هذه السطور للأنميشن */
-section, .glass-box {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.8s cubic-bezier(0.2, 0, 0.2, 1);
-}
