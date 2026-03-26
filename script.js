@@ -37,7 +37,7 @@ async function loadProjects() {
   try {
     // 1. هنجيب قائمة الملفات من GitHub API (تأكد من اسم اليوزر والمستودع)
     // ملاحظة: Netlify CMS بيحفظ المشاريع في projects/data
-    const response = await fetch('https://api.github.com/repos/YOUR_GITHUB_USERNAME/YOUR_REPO_NAME/contents/projects/data' );
+    const response = await fetch('https://api.github.com/repos/beshofocus204-ux/besho-portfolio/contents/projects/data' );
     const files = await response.json();
 
     if (!Array.isArray(files)) throw new Error("No projects found");
