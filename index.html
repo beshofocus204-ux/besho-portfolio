@@ -16,8 +16,8 @@
   <header>
     <div class="logo">Besho Focus</div>
     <div class="controls">
-      <!-- زرار الأدمن الجديد -->
-      <a href="/admin/" class="admin-link" title="Admin Panel">⚙️</a>
+      <!-- زرار الأدمن مكتوب عليه Admin -->
+      <a href="/admin/" class="admin-link" data-en="Admin" data-ar="لوحة التحكم">Admin</a>
       
       <!-- سويتش اللغة -->
       <div class="toggle-container" id="langToggle">
@@ -45,13 +45,13 @@
       </div>
     </section>
 
-    <!-- قسم المشاريع (سيتم ملؤه تلقائياً ) -->
+    <!-- قسم المشاريع -->
     <section id="projects" class="projects-grid"></section>
   </main>
 
   <script src="script.js"></script>
   <script>
-    if (window.netlifyIdentity) {
+    if (window.netlifyIdentity ) {
       window.netlifyIdentity.on("init", user => {
         if (!user) {
           window.netlifyIdentity.on("login", () => {
