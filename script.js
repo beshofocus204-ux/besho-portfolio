@@ -34,3 +34,17 @@ document.querySelectorAll('section, .glass-box').forEach(el => {
   el.style.transition = "all 0.8s ease-out";
   observer.observe(el);
 });
+
+// تفعيل أنميشن الظهور عند التمرير للسكاشن الجديدة
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = 1;
+      entry.target.style.transform = "translateY(0)";
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('section, .glass-box').forEach(el => {
+  observer.observe(el);
+});
