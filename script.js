@@ -19,7 +19,7 @@ langToggle.onclick = () => {
   });
 };
 
-// أنميشن التمرير (Scroll Reveal) لجميع السكاشن والبوكسات
+// أنميشن التمرير (Scroll Reveal) لجميع السكاشن والبوكسات والعناصر الجديدة
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -29,7 +29,7 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.1 });
 
-document.querySelectorAll("section, .glass-box").forEach(el => {
+document.querySelectorAll("section, .glass-box, .stat-item, .hero-image-container, .hero-text-content").forEach(el => {
   el.style.opacity = 0;
   el.style.transform = "translateY(30px)";
   el.style.transition = "all 0.8s cubic-bezier(0.2, 0, 0.2, 1)";
