@@ -1,14 +1,16 @@
 backend:
   name: git-gateway
-  branch: main # تأكد إنه نفس اسم البرانش بتاعك
+  branch: main # تأكد إن ده اسم البرانش بتاعك
 
-media_folder: "projects/images" # المكان اللي الصور هتتحفظ فيه
+local_backend: true # عشان لو حبيت تجربه على جهازك
+
+media_folder: "projects/images"
 public_folder: "/projects/images"
 
 collections:
   - name: "projects"
     label: "Projects"
-    folder: "projects/data" # المكان اللي بيانات المشاريع هتتحفظ فيه
+    folder: "projects/data"
     create: true
     slug: "{{slug}}"
     fields:
